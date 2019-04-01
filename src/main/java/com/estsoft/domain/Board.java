@@ -13,14 +13,17 @@ public class Board {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "BOARD_ID")
-    private int id;
+    @Column(name = "NO")
+    private int no;
 
     @Column(name = "TITLE")
     private String title;
 
     @Column(name = "CONTENT")
     private String content;
+    
+    @Column(name = "WRITER")
+    private String writer;
 
     @Column(name = "REG_DATE")
     private Date regDate;
@@ -29,14 +32,27 @@ public class Board {
     private Date modifyDate;
 
 	@Column(name = "DEL_FLAG")
-    private int delFlag;
+    private String delFlag;
+	
+	// ´ä±Û
+	@Column(name = "GROUP_NO")
+    private int groupNo;
+	
+	@Column(name = "GROUP_SEQ")
+    private int groupSeq;
+	
+	@Column(name = "PARENT_NO")
+    private int parentNo;
+	
+	@Column(name = "DEPTH")
+    private int depth;
 
-	public int getId() {
-		return id;
+	public int getNo() {
+		return no;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setNo(int no) {
+		this.no = no;
 	}
 
 	public String getTitle() {
@@ -55,6 +71,14 @@ public class Board {
 		this.content = content;
 	}
 
+	public String getWriter() {
+		return writer;
+	}
+
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+
 	public Date getRegDate() {
 		return regDate;
 	}
@@ -71,17 +95,52 @@ public class Board {
 		this.modifyDate = modifyDate;
 	}
 
-	public int isDelFlag() {
+	public String getDelFlag() {
 		return delFlag;
 	}
 
-	public void setDelFlag(int delFlag) {
+	public void setDelFlag(String delFlag) {
 		this.delFlag = delFlag;
+	}
+
+	public int getGroupNo() {
+		return groupNo;
+	}
+
+	public void setGroupNo(int groupNo) {
+		this.groupNo = groupNo;
+	}
+
+	public int getGroupSeq() {
+		return groupSeq;
+	}
+
+	public void setGroupSeq(int groupSeq) {
+		this.groupSeq = groupSeq;
+	}
+
+	public int getParentNo() {
+		return parentNo;
+	}
+
+	public void setParentNo(int parentNo) {
+		this.parentNo = parentNo;
+	}
+
+	public int getDepth() {
+		return depth;
+	}
+
+	public void setDepth(int depth) {
+		this.depth = depth;
 	}
 
 	@Override
 	public String toString() {
-		return "Board [id=" + id + ", title=" + title + ", content=" + content + ", regDate=" + regDate
-				+ ", modifyDate=" + modifyDate + ", delFlag=" + delFlag + "]";
+		return "Board [no=" + no + ", title=" + title + ", content=" + content + ", writer=" + writer + ", regDate="
+				+ regDate + ", modifyDate=" + modifyDate + ", delFlag=" + delFlag + ", groupNo=" + groupNo
+				+ ", groupSeq=" + groupSeq + ", parentNo=" + parentNo + ", depth=" + depth + "]";
 	}
+
+	
 }

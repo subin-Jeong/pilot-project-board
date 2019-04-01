@@ -352,7 +352,7 @@
                   	<form name="form">
                   	<tr class="form-group">
                       <td>boardId</td>
-                      <td><input type="hidden" class="form-control" id="id" value="{{board.id}}">{{board.id}}</td>
+                      <td><input type="hidden" class="form-control" id="no" value="{{board.no}}">{{board.no}}</td>
                     </tr>
                     <tr class="form-group">
                       <td>제목</td>
@@ -383,8 +383,12 @@
 				<a href="/board/list" class="btn btn-secondary btn-icon-split">
 					<span class="text">목록</span>
 				</a>
+				
+				<a href="/board/write/{{board.no}}" class="btn btn-success btn-icon-split">
+					<span class="text">답글</span>
+				</a>
 					
-				<a href="/board/modify/{{board.id}}" class="btn btn-warning btn-icon-split">
+				<a href="/board/modify/{{board.no}}" class="btn btn-warning btn-icon-split">
 					<span class="text">수정</span>
 				</a>
   

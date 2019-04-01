@@ -337,58 +337,29 @@
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
-           
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">	
-			  </h6>
-            </div>
-          
-          
             <div class="card-body">
 				
               <div class="table-responsive">
                 <table class="table table-bordered" width="100%" cellspacing="0">
                   <tbody>
                   	<form name="form">
+                  	<input type="hidden" class="form-control" id="group_no" value="{{groupNo}}">
                   	<tr class="form-group">
-                      <td>boardId</td>
-                      <td><input type="hidden" class="form-control" id="id" value="{{board.no}}">{{board.no}}</td>
-                    </tr>
-                    <tr class="form-group">
                       <td>제목</td>
-                      <td><input type="text" class="form-control" id="title" placeholder="제목을 입력하세요" value="{{board.title}}"></td>
+                      <td><input type="text" class="form-control" id="title" placeholder="제목을 입력하세요"></td>
                     </tr>
                     <tr class="form-group">
                       <td>내용</td>
-                      <td><textarea class="form-control" id="contents" placeholder="내용을 입력하세요">{{board.content}}</textarea></td>
-                    </tr>
-                    <tr class="form-group">
-                      <td>수정일자</td>
-                      <td><input type="text" class="form-control" id="modify_date" placeholder="제목을 입력하세요" value="{{board.modifyDate}}"></td>
-                    </tr>
-                    <tr class="form-group">
-                      <td>등록일자</td>
-                      <td><input type="text" class="form-control" id="reg_date" placeholder="제목을 입력하세요" value="{{board.regDate}}"></td>
-                    </tr>
-                    <tr class="form-group">
-                      <td>삭제유무</td>
-                      <td><input type="text" class="form-control" id="del_flag" placeholder="제목을 입력하세요" value="{{board.delFlag}}"></td>
+                      <td><textarea class="form-control" id="contents" placeholder="내용을 입력하세요"></textarea></td>
                     </tr>
                     </form>
           	      </tbody>
                 </table>
                 
-				<div style="float:right;">	
-					
-				<a href="#" class="btn btn-warning btn-icon-split" id="btn-mod">
-					<span class="text">수정</span>
+				<div style="float:right;">		
+				<a href="#" class="btn btn-primary btn-icon-split" id="btn-save">
+				<span class="text">글등록</span>
 				</a>
-  
-				<a href="#" class="btn btn-secondary btn-icon-split" id="btn-exit">
-					<span class="text">취소</span>
-				</a>
-				
-                  
 				</div>
 				
               </div>

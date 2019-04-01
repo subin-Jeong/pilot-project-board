@@ -1,6 +1,10 @@
 package com.estsoft.web;
 
+import java.util.Enumeration;
 import java.util.List;
+
+import javax.persistence.Column;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,6 +39,7 @@ public class BoardController {
 	@PostMapping("/getList")
 	@ResponseBody 
 	public List<Board> getList() {
+	
 		return boardRepository.findAll(); 
 	}
 	
@@ -44,7 +49,7 @@ public class BoardController {
 	//─────────────────────────────────────────
 	
 	@GetMapping("/write")
-	public String save() {
+	public String write() {
 		return "/board/write";
 	}
 	
@@ -52,12 +57,13 @@ public class BoardController {
 	@PostMapping("/save")
 	@ResponseBody 
 	public Board save(@RequestBody Board board) {
+		
 		return boardRepository.save(board);
 	}
 	
 	
 	//─────────────────────────────────────────
-	// 확인
+	// 상세
 	//─────────────────────────────────────────
 	
 	@GetMapping("/detail/{bNo}")
@@ -90,7 +96,7 @@ public class BoardController {
 	@ResponseBody
 	public Board update(@PathVariable int bNo, @RequestBody Board board) {
 		
-		board.setId(bNo);
+		board.setNo(bNo);
 		
 		return boardRepository.save(board);
 	}
@@ -104,6 +110,34 @@ public class BoardController {
 	public String delete(@PathVariable int bNo) {
 		boardRepository.delete(bNo);
 		return "/board/list";
-	}					
+	}	
 	
+	//─────────────────────────────────────────
+	// 답글 등록
+	//─────────────────────────────────────────
+	
+	@GetMapping("/write/{bNo}")
+	public String writeReply(@PathVariable int bNo, Model model) {
+		model.addAttribute("groupNo", bNo);
+		return "/board/reply";
+	}
+	
+	@Transactional
+	@PostMapping("/saveReply")
+	@ResponseBody 
+	public Board saveReply(@RequestBody Board board) {
+		
+		// 원글 번호로 groupSeq, parentNo, depth 지정
+		int groupNo = board.getGroupNo();
+		
+		// groupSeq : 원글 포함 전체 순서 지정
+		// parentNo : 부모 글
+		// depth : parentNo의 depth + 1
+		int groupSeq = boardRepository.findMaxGroupSeqByGroupNo(groupNo);
+		
+		board.setGroupSeq(groupSeq + 1);
+		
+		return boardRepository.save(board);
+	}
+
 }

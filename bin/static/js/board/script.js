@@ -31,20 +31,17 @@ $(document).ready(function() {
 		ServerSide: true,
 		searching: true,
 		order: [ 0, 'desc' ],
-		ajax: {
-		    url: "/board/getList",
-		    dataSrc: "",
-		    type: "POST"
-		},
-		
+		sAjaxSource : "/board/getList",
+        sServerMethod: "POST",
+		sAjaxDataProp: "",
 		columns: [
-			{ data: "id"},
+			{ data: "no"},
 			{ data: "title",
 				
 				"render": function(data, type, row){
 					
 			        if(type=="display"){
-			            data = "<a href=\"/board/detail/"+  row["id"] +"\" style=\"text-decoration:none; color:#858796;\"><b>" + data + "</b></a>";
+			            data = "<a href=\"/board/detail/"+  row["no"] +"\" style=\"text-decoration:none; color:#858796;\"><b>" + data + "</b></a>";
 			        }
 			        return data;
 			    }
@@ -63,16 +60,24 @@ $(document).ready(function() {
 $('#btn-save').on("click", function () {
 	
 	var data = {
-	    title: $("#title").val(),
+		title: $("#title").val(),
 	    content: $("#contents").val(),
-	    delFlag: 1,
-	    modifyDate: "2019-04-01",
-	    regDate: "2019-04-01"
+	    delFlag: "N",
+	    modifyDate: $("#modify_date").val(),
+	    regDate: $("#reg_date").val(),
+	    writer: "test",
+	    groupNo: ($("#group_no").val()) ? $("#group_no").val() : 0,
+		groupSeq: ($("#group_seq").val()) ? $("#group_seq").val() : 0,
+		parentNo: ($("#parent_no").val()) ? $("#parent_no").val() : 0,
+		depth: ($("#depth").val()) ? $("#depth").val() : 0
 	};
+	
+	// 답글의 경우 url 변경
+	var url = ($("#group_no").val()) ? "/board/saveReply" : "/board/save";
 	
     $.ajax({
         type: "POST",
-        url: "/board/save",
+        url: url,
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(data),
@@ -93,26 +98,31 @@ $('#btn-save').on("click", function () {
 // 수정
 $('#btn-mod').on("click", function () {
 	
-	var bId = $("#id").val();
+	var bNo = $("#no").val();
 	
 	var data = {
 	    title: $("#title").val(),
 	    content: $("#contents").val(),
-	    delFlag: $("#del_flag").val(),
+	    delFlag: "N",
 	    modifyDate: $("#modify_date").val(),
-	    regDate: $("#reg_date").val()
+	    regDate: $("#reg_date").val(),
+	    writer: "test",
+	    groupNo: ($("#group_no").val()) ? $("#group_no").val() : 0,
+	    groupSeq: ($("#group_seq").val()) ? $("#group_seq").val() : 0,
+	    parentNo: ($("#parent_no").val()) ? $("#parent_no").val() : 0,
+	    depth: ($("#depth").val()) ? $("#depth").val() : 0
 	};
 	
     $.ajax({
         type: "PUT",
-        url: "/board/update/" + bId,
+        url: "/board/update/" + bNo,
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(data),
         success:function(args){   
         	
         	alert("수정되었습니다.")
-	        location.href = "/board/detail/" + $("#id").val();   
+	        location.href = "/board/detail/" + $("#no").val();   
         	
         }, 
         error:function(e){  
@@ -126,11 +136,11 @@ $('#btn-mod').on("click", function () {
 // 삭제
 $('#btn-del').on("click", function () {
 	
-	var bId = $("#id").val();
+	var bNo = $("#no").val();
 	
     $.ajax({
         type: "PUT",
-        url: "/board/delete/" + bId,
+        url: "/board/delete/" + bNo,
         success:function(args){   
         	
         	alert("삭제되었습니다.")
