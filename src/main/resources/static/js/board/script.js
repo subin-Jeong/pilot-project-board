@@ -1,98 +1,153 @@
-
+// 리스트
 $(document).ready(function() {
 	
 	$('#boardList').DataTable({
+		
+	
 	    "columnDefs": [{
 	        "defaultContent": "-",
 	        "targets": "_all"
 	      }],
-	    pageLength: 10,
-	    bPaginate: true,
-	    responsive: true,
-	    processing: true,
-	    ordering: true,
-	    ServerSide: true,
-	    searching: false,
-	    ajax: {
-	        url: "/board/getList",
-	        dataSrc: "content",
-		    data: function(d) {
-		        return JSON.stringify(d);
-		    },
-		    contentType: 'application/json',
-		    type: 'POST'
-	    },
-
-	    columns: [
-	    { content: "id"},
-	     { content: "content" },
-	     { content: "delFlag" },
-	     { content: "modifyDate" },
-	     { content: "regDate" },
-	     { content: "title" }
-	       ]
+	      
+		"language": {
+			"emptyTable": "데이터가 없습니다.",
+			"lengthMenu": "페이지당 _MENU_ 개씩 보기",
+			"info": "현재 _START_ - _END_ / _TOTAL_건",
+			"infoEmpty": "-",
+			"infoFiltered": "( _MAX_건의 데이터에서 필터링됨 )",
+			"search": "검색 : ",
+			"zeroRecords": "일치하는 데이터가 없습니다.",
+			"loadingRecords": "로딩중...",
+			"processing": "잠시만 기다려 주세요...",
+			"next": "다음",
+			"previous": "이전"
+		},
+	
+		pageLength: 10,
+		bPaginate: true,
+		responsive: true,
+		processing: true,
+		ordering: true,
+		ServerSide: true,
+		searching: true,
+		order: [ 0, 'desc' ],
+		ajax: {
+		    url: "/board/getList",
+		    dataSrc: "",
+		    type: "POST"
+		},
+		
+		columns: [
+			{ data: "id"},
+			{ data: "title",
+				
+				"render": function(data, type, row){
+					
+			        if(type=="display"){
+			            data = "<a href=\"/board/detail/"+  row["id"] +"\" style=\"text-decoration:none; color:#858796;\"><b>" + data + "</b></a>";
+			        }
+			        return data;
+			    }
+			
+			 },
+			{ data: "delFlag" },
+			{ data: "modifyDate" },
+			{ data: "regDate" },
+			{ data: "content" }]
+	
 	});
 
-/*
+});
+
+// 등록
+$('#btn-save').on("click", function () {
+	
+	var data = {
+	    title: $("#title").val(),
+	    content: $("#contents").val(),
+	    delFlag: 1,
+	    modifyDate: "2019-04-01",
+	    regDate: "2019-04-01"
+	};
 	
     $.ajax({
-        url:'/board/getList',
-        type:'POST',
-        dataType: 'text',
-        success: function(data){
+        type: "POST",
+        url: "/board/save",
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(data),
+        success:function(args){   
+        	
+        	alert("등록되었습니다.")
+	        location.href = "/board/list";   
+        	
+        }, 
+        error:function(e){  
+            alert(e.responseText);  
+        } 
 
-        	// JSON Text를 JSON Object로 변환
-        	// 그래야 Handlebars Binding 가능
-        	var dataObj = JSON.parse(data);
+    });
+	    
+});
 
-        	// Handlebars Template 생성
-        	var source = "{{#content}}";
-        		source+= "<tr>";
-        		source+= "	<td>{{id}}</td>";
-        		source+= "  <td>{{title}}</td>";
-        		source+= "  <td>{{title}}</td>";
-        		source+= "  <td>{{regDate}}</td>";
-        		source+= "  <td>{{regDate}}</td>";
-        	    source+= "</tr>";
-        	    source+= "{{/content}}";
-        	   
-        	 // Handlebars Template 컴파일
-        	var template = Handlebars.compile(source); 
+// 수정
+$('#btn-mod').on("click", function () {
+	
+	var bId = $("#id").val();
+	
+	var data = {
+	    title: $("#title").val(),
+	    content: $("#contents").val(),
+	    delFlag: $("#del_flag").val(),
+	    modifyDate: $("#modify_date").val(),
+	    regDate: $("#reg_date").val()
+	};
+	
+    $.ajax({
+        type: "PUT",
+        url: "/board/update/" + bId,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(data),
+        success:function(args){   
+        	
+        	alert("수정되었습니다.")
+	        location.href = "/board/detail/" + $("#id").val();   
+        	
+        }, 
+        error:function(e){  
+            alert(e.responseText);  
+        } 
 
-        	// Handlebars Template 에 데이터를 바인딩해서 HTML 생성 후 랜더링
-        	$("#list").html(template(dataObj));
+    });
+	    
+});
+
+// 삭제
+$('#btn-del').on("click", function () {
+	
+	var bId = $("#id").val();
+	
+    $.ajax({
+        type: "PUT",
+        url: "/board/delete/" + bId,
+        success:function(args){   
         	
-        	alert("총 페이지? " + dataObj.totalPages);
-     	
-        	// 페이징
-        	// init bootpag
-        	$('#pagination').bootpag({
-        		
-        		// total pages
-        	    total: dataObj.totalPages,
-        	    // default page
-        	    page: 1,
-        	    // visible pagination
-        	    maxVisible: dataObj.size,
-        	    // next/prev leaps through maxVisible
-        	    leaps: true    
-        	    
-        	}).on("page", function(event, num){
-        	    $("#content").html("Page " + num); // or some ajax content loading...
-        	    // ... after content load -> change total to 10
-        	    $(this).bootpag({total: 10, maxVisible: 10});
-        	    
-        	   location.href = "/board/getList?page="+num;
-        	});
+        	alert("삭제되었습니다.")
+	        location.href = "/board/list";   
         	
-        	
-        	
-        	
-        }// end
-    });// end ajax
-    return false;
-    
-  */
-    
+        }, 
+        error:function(e){  
+            alert(e.responseText);  
+        } 
+
+    });
+	    
+});
+
+
+// 취소
+$('#btn-exit').on("click", function () {
+	history.go(-1);
 });
 

@@ -12,14 +12,14 @@
   <title>SB Admin 2 - Tables</title>
 
   <!-- Custom fonts for this template -->
-  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
 
   <!-- Custom styles for this page -->
-  <link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link href="../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
   
 
 </head>
@@ -335,39 +335,62 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
-
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
+           
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">	
-              	<div style="float:right;">		
-				<a href="/board/write" class="btn btn-primary btn-icon-split">
-				<span class="text">글등록</span>
-				</a>
-				</div>
 			  </h6>
             </div>
+          
+          
             <div class="card-body">
 				
               <div class="table-responsive">
-                <table class="table table-bordered display hover" id="boardList" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Start date</th>
+                <table class="table table-bordered" width="100%" cellspacing="0">
+                  <tbody>
+                  	<form name="form">
+                  	<tr class="form-group">
+                      <td>boardId</td>
+                      <td><input type="hidden" class="form-control" id="id" value="{{board.id}}">{{board.id}}</td>
                     </tr>
-                  </thead>
-                  <tbody id="list">
+                    <tr class="form-group">
+                      <td>제목</td>
+                      <td><input type="text" class="form-control" id="title" placeholder="제목을 입력하세요" value="{{board.title}}"></td>
+                    </tr>
+                    <tr class="form-group">
+                      <td>내용</td>
+                      <td><textarea class="form-control" id="contents" placeholder="내용을 입력하세요">{{board.content}}</textarea></td>
+                    </tr>
+                    <tr class="form-group">
+                      <td>수정일자</td>
+                      <td><input type="text" class="form-control" id="modify_date" placeholder="제목을 입력하세요" value="{{board.modifyDate}}"></td>
+                    </tr>
+                    <tr class="form-group">
+                      <td>등록일자</td>
+                      <td><input type="text" class="form-control" id="reg_date" placeholder="제목을 입력하세요" value="{{board.regDate}}"></td>
+                    </tr>
+                    <tr class="form-group">
+                      <td>삭제유무</td>
+                      <td><input type="text" class="form-control" id="del_flag" placeholder="제목을 입력하세요" value="{{board.delFlag}}"></td>
+                    </tr>
+                    </form>
           	      </tbody>
                 </table>
-
+                
+				<div style="float:right;">	
+					
+				<a href="#" class="btn btn-warning btn-icon-split" id="btn-mod">
+					<span class="text">수정</span>
+				</a>
+  
+				<a href="#" class="btn btn-secondary btn-icon-split" id="btn-exit">
+					<span class="text">취소</span>
+				</a>
+				
+                  
+				</div>
+				
               </div>
 
             </div>
@@ -421,28 +444,29 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="../js/lib/sb-admin-2.min.js"></script>
+  <script src="../../js/lib/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  <script src="../../vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script src="../js/lib/demo/datatables-demo.js"></script>
+  <script src="../../js/lib/demo/datatables-demo.js"></script>
 
   <!-- bootPag plugin JavaScript -->
-  <script src="../js/lib/jquery.bootpag.min.js"></script>
+  <script src="../../js/lib/jquery.bootpag.min.js"></script>
   
   <!-- custom JavaScript -->
-  <script src="../js/handlebars.js"></script>
-  <script src="../js/board/script.js"></script>
+  <script src="../../js/handlebars.js"></script>
+  <script src="../../js/board/script.js"></script>
+  
   
 </body>
 

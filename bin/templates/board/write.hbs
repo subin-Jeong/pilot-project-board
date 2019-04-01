@@ -335,39 +335,32 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
-
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">	
-              	<div style="float:right;">		
-				<a href="/board/write" class="btn btn-primary btn-icon-split">
-				<span class="text">글등록</span>
-				</a>
-				</div>
-			  </h6>
-            </div>
             <div class="card-body">
 				
               <div class="table-responsive">
-                <table class="table table-bordered display hover" id="boardList" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Start date</th>
+                <table class="table table-bordered" width="100%" cellspacing="0">
+                  <tbody>
+                  	<form name="form">
+                  	<tr class="form-group">
+                      <td>제목</td>
+                      <td><input type="text" class="form-control" id="title" placeholder="제목을 입력하세요"></td>
                     </tr>
-                  </thead>
-                  <tbody id="list">
+                    <tr class="form-group">
+                      <td>내용</td>
+                      <td><textarea class="form-control" id="contents" placeholder="내용을 입력하세요"></textarea></td>
+                    </tr>
+                    </form>
           	      </tbody>
                 </table>
-
+                
+				<div style="float:right;">		
+				<a href="#" class="btn btn-primary btn-icon-split" id="btn-save">
+				<span class="text">글등록</span>
+				</a>
+				</div>
+				
               </div>
 
             </div>
@@ -443,6 +436,7 @@
   <!-- custom JavaScript -->
   <script src="../js/handlebars.js"></script>
   <script src="../js/board/script.js"></script>
+  
   
 </body>
 
