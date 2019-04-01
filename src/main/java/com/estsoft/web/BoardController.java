@@ -57,7 +57,6 @@ public class BoardController {
 	 * DataTablesOutput<Board> getList(@Valid DataTablesInput input) {
 	 * System.out.println(boardRepository.findAll().toString()); return
 	 * boardRepository.findAll(input); }
-	 * 
 	 */
 	  
 	@PostMapping("/getList")
