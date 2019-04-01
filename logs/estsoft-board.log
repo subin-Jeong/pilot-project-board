@@ -1,0 +1,427 @@
+2019-03-28 13:36:09.861 [main] INFO  com.estsoft.BoardApplication - Starting BoardApplication on DESKTOP-COAE010 with PID 4204 (C:\JSB\PilotProject\board\bin started by JSB in C:\JSB\PilotProject\board)
+2019-03-28 13:36:09.863 [main] INFO  com.estsoft.BoardApplication - No active profile set, falling back to default profiles: default
+2019-03-28 13:36:09.887 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4b5a5ed1: startup date [Thu Mar 28 13:36:09 KST 2019]; root of context hierarchy
+2019-03-28 13:36:09.959 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2019-03-28 13:36:10.716 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 13:36:10.722 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-03-28 13:36:10.722 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2019-03-28 13:36:10.817 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-03-28 13:36:10.818 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 931 ms
+2019-03-28 13:36:10.905 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-28 13:36:10.907 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-28 13:36:10.908 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-28 13:36:10.908 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-28 13:36:10.908 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-28 13:36:11.119 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-03-28 13:36:11.127 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-28 13:36:11.175 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2019-03-28 13:36:11.176 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2019-03-28 13:36:11.177 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2019-03-28 13:36:11.202 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-03-28 13:36:11.269 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-28 13:36:11.469 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2019-03-28 13:36:11.512 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-28 13:36:11.872 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4b5a5ed1: startup date [Thu Mar 28 13:36:09 KST 2019]; root of context hierarchy
+2019-03-28 13:36:11.909 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/board/test],methods=[GET]}" onto public java.lang.String com.estsoft.web.BoardController.test()
+2019-03-28 13:36:11.910 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/board/writer/{id}],methods=[GET]}" onto public java.util.List<com.estsoft.domain.Board> com.estsoft.web.BoardController.findByWriter(java.lang.String)
+2019-03-28 13:36:11.912 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-28 13:36:11.912 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-28 13:36:11.931 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 13:36:11.931 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 13:36:11.952 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 13:36:12.092 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-03-28 13:36:12.102 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 13:36:12.108 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 13:36:12.115 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-03-28 13:36:12.126 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2019-03-28 13:36:12.128 [main] INFO  com.estsoft.BoardApplication - Started BoardApplication in 2.487 seconds (JVM running for 2.927)
+2019-03-28 13:36:17.335 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-28 13:36:17.335 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-28 13:36:17.346 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+2019-03-28 13:36:17.361 [http-nio-8080-exec-1] INFO  com.estsoft.web.BoardController - log test
+2019-03-28 13:49:06.343 [RMI TCP Connection(15)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2019-03-28 13:49:06.344 [RMI TCP Connection(15)-127.0.0.1] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4b5a5ed1: startup date [Thu Mar 28 13:36:09 KST 2019]; root of context hierarchy
+2019-03-28 13:49:06.345 [RMI TCP Connection(15)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-03-28 13:49:06.345 [RMI TCP Connection(15)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-03-28 13:49:09.804 [main] INFO  com.estsoft.BoardApplication - Starting BoardApplication on DESKTOP-COAE010 with PID 3408 (C:\JSB\PilotProject\board\bin started by JSB in C:\JSB\PilotProject\board)
+2019-03-28 13:49:09.805 [main] INFO  com.estsoft.BoardApplication - No active profile set, falling back to default profiles: default
+2019-03-28 13:49:09.902 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2019-03-28 13:49:09.921 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 13:49:09 KST 2019]; root of context hierarchy
+2019-03-28 13:49:10.730 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 13:49:10.736 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-03-28 13:49:10.737 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2019-03-28 13:49:10.832 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-03-28 13:49:10.833 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 912 ms
+2019-03-28 13:49:10.917 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-28 13:49:10.919 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-28 13:49:10.920 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-28 13:49:10.920 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-28 13:49:10.920 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-28 13:49:11.132 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-03-28 13:49:11.140 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-28 13:49:11.180 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2019-03-28 13:49:11.181 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2019-03-28 13:49:11.182 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2019-03-28 13:49:11.209 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-03-28 13:49:11.275 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-28 13:49:11.511 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2019-03-28 13:49:11.555 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-28 13:49:11.875 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 13:49:09 KST 2019]; root of context hierarchy
+2019-03-28 13:49:11.912 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/board/test],methods=[GET]}" onto public java.lang.String com.estsoft.web.BoardController.test()
+2019-03-28 13:49:11.913 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/board/writer/{id}],methods=[GET]}" onto public java.util.List<com.estsoft.domain.Board> com.estsoft.web.BoardController.findByWriter(java.lang.String)
+2019-03-28 13:49:11.915 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-28 13:49:11.915 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-28 13:49:11.935 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 13:49:11.935 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 13:49:11.959 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 13:49:12.247 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-03-28 13:49:12.256 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 13:49:12.261 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 13:49:12.267 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-03-28 13:49:12.277 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2019-03-28 13:49:12.280 [main] INFO  com.estsoft.BoardApplication - Started BoardApplication in 2.691 seconds (JVM running for 3.13)
+2019-03-28 13:49:16.571 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-28 13:49:16.571 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-28 13:49:16.582 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+2019-03-28 13:49:16.597 [http-nio-8080-exec-1] INFO  com.estsoft.web.BoardController - log test
+2019-03-28 14:03:32.335 [RMI TCP Connection(18)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2019-03-28 14:03:32.335 [RMI TCP Connection(18)-127.0.0.1] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 13:49:09 KST 2019]; root of context hierarchy
+2019-03-28 14:03:32.337 [RMI TCP Connection(18)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-03-28 14:03:32.337 [RMI TCP Connection(18)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-03-28 14:05:04.369 [main] INFO  com.estsoft.BoardApplication - Starting BoardApplication on DESKTOP-COAE010 with PID 14936 (C:\JSB\PilotProject\board\bin started by JSB in C:\JSB\PilotProject\board)
+2019-03-28 14:05:04.371 [main] INFO  com.estsoft.BoardApplication - No active profile set, falling back to default profiles: default
+2019-03-28 14:05:04.466 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2019-03-28 14:05:04.487 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 14:05:04 KST 2019]; root of context hierarchy
+2019-03-28 14:05:05.339 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 14:05:05.345 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-03-28 14:05:05.346 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2019-03-28 14:05:05.443 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-03-28 14:05:05.444 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 957 ms
+2019-03-28 14:05:05.533 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-28 14:05:05.535 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-28 14:05:05.536 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-28 14:05:05.536 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-28 14:05:05.536 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-28 14:05:05.761 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-03-28 14:05:05.769 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-28 14:05:05.810 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2019-03-28 14:05:05.811 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2019-03-28 14:05:05.811 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2019-03-28 14:05:05.837 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-03-28 14:05:05.903 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-28 14:05:06.147 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2019-03-28 14:05:06.191 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-28 14:05:06.517 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 14:05:04 KST 2019]; root of context hierarchy
+2019-03-28 14:05:06.554 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/board/test],methods=[GET]}" onto public java.lang.String com.estsoft.web.BoardController.test()
+2019-03-28 14:05:06.556 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/board/writer/{id}],methods=[GET]}" onto public java.util.List<com.estsoft.domain.Board> com.estsoft.web.BoardController.findByWriter(java.lang.String)
+2019-03-28 14:05:06.557 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-28 14:05:06.557 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-28 14:05:06.580 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 14:05:06.580 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 14:05:06.605 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 14:05:06.905 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-03-28 14:05:06.914 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 14:05:06.919 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 14:05:06.926 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-03-28 14:05:06.936 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2019-03-28 14:05:06.939 [main] INFO  com.estsoft.BoardApplication - Started BoardApplication in 2.793 seconds (JVM running for 3.24)
+2019-03-28 14:05:08.290 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-28 14:05:08.291 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-28 14:05:08.302 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+2019-03-28 14:05:12.579 [http-nio-8080-exec-2] INFO  com.estsoft.web.BoardController - log test
+2019-03-28 14:06:52.006 [http-nio-8080-exec-6] INFO  com.estsoft.web.BoardController - log test
+2019-03-28 14:11:10.599 [http-nio-8080-exec-9] INFO  com.estsoft.web.BoardController - log test
+2019-03-28 14:11:54.922 [RMI TCP Connection(10)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2019-03-28 14:11:54.923 [RMI TCP Connection(10)-127.0.0.1] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 14:05:04 KST 2019]; root of context hierarchy
+2019-03-28 14:11:54.924 [RMI TCP Connection(10)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-03-28 14:11:54.925 [RMI TCP Connection(10)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-03-28 14:11:58.603 [main] INFO  com.estsoft.BoardApplication - Starting BoardApplication on DESKTOP-COAE010 with PID 16300 (C:\JSB\PilotProject\board\bin started by JSB in C:\JSB\PilotProject\board)
+2019-03-28 14:11:58.604 [main] INFO  com.estsoft.BoardApplication - No active profile set, falling back to default profiles: default
+2019-03-28 14:11:58.696 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2019-03-28 14:11:58.728 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c22fc4c: startup date [Thu Mar 28 14:11:58 KST 2019]; root of context hierarchy
+2019-03-28 14:11:59.575 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 14:11:59.581 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-03-28 14:11:59.581 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2019-03-28 14:11:59.677 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-03-28 14:11:59.677 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 949 ms
+2019-03-28 14:11:59.763 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-28 14:11:59.765 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-28 14:11:59.766 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-28 14:11:59.766 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-28 14:11:59.766 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-28 14:11:59.984 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-03-28 14:11:59.992 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-28 14:12:00.034 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2019-03-28 14:12:00.035 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2019-03-28 14:12:00.036 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2019-03-28 14:12:00.063 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-03-28 14:12:00.133 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-28 14:12:00.378 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2019-03-28 14:12:00.423 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-28 14:12:00.757 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c22fc4c: startup date [Thu Mar 28 14:11:58 KST 2019]; root of context hierarchy
+2019-03-28 14:12:00.795 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/board/test],methods=[GET]}" onto public java.lang.String com.estsoft.web.BoardController.test()
+2019-03-28 14:12:00.797 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/board/writer/{id}],methods=[GET]}" onto public java.util.List<com.estsoft.domain.Board> com.estsoft.web.BoardController.findByWriter(java.lang.String)
+2019-03-28 14:12:00.798 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-28 14:12:00.798 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-28 14:12:00.820 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 14:12:00.820 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 14:12:00.844 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 14:12:01.012 [main] INFO  o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2019-03-28 14:12:01.142 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-03-28 14:12:01.151 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 14:12:01.156 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 14:12:01.163 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-03-28 14:12:01.174 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2019-03-28 14:12:01.177 [main] INFO  com.estsoft.BoardApplication - Started BoardApplication in 2.805 seconds (JVM running for 3.315)
+2019-03-28 14:12:08.517 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-28 14:12:08.517 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-28 14:12:08.531 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
+2019-03-28 14:12:08.548 [http-nio-8080-exec-1] INFO  com.estsoft.web.BoardController - log test
+2019-03-28 14:14:00.165 [http-nio-8080-exec-1] INFO  com.estsoft.web.BoardController - log test
+2019-03-28 15:05:57.402 [RMI TCP Connection(56)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2019-03-28 15:05:57.403 [RMI TCP Connection(56)-127.0.0.1] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c22fc4c: startup date [Thu Mar 28 14:11:58 KST 2019]; root of context hierarchy
+2019-03-28 15:05:57.405 [RMI TCP Connection(56)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-03-28 15:05:57.405 [RMI TCP Connection(56)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-03-28 15:06:01.769 [main] INFO  com.estsoft.BoardApplication - Starting BoardApplication on DESKTOP-COAE010 with PID 17072 (C:\JSB\PilotProject\board\bin started by JSB in C:\JSB\PilotProject\board)
+2019-03-28 15:06:01.771 [main] INFO  com.estsoft.BoardApplication - No active profile set, falling back to default profiles: default
+2019-03-28 15:06:01.867 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2019-03-28 15:06:01.893 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 15:06:01 KST 2019]; root of context hierarchy
+2019-03-28 15:06:02.740 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 15:06:02.746 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-03-28 15:06:02.747 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2019-03-28 15:06:02.841 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-03-28 15:06:02.841 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 948 ms
+2019-03-28 15:06:02.926 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-28 15:06:02.928 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-28 15:06:02.929 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-28 15:06:02.929 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-28 15:06:02.929 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-28 15:06:03.144 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-03-28 15:06:03.152 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-28 15:06:03.192 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2019-03-28 15:06:03.193 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2019-03-28 15:06:03.194 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2019-03-28 15:06:03.219 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-03-28 15:06:03.288 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-28 15:06:03.529 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2019-03-28 15:06:03.574 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-28 15:06:03.900 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 15:06:01 KST 2019]; root of context hierarchy
+2019-03-28 15:06:03.937 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/board/test],methods=[GET]}" onto public java.lang.String com.estsoft.web.BoardController.test()
+2019-03-28 15:06:03.939 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/board/writer/{id}],methods=[GET]}" onto public java.util.List<com.estsoft.domain.Board> com.estsoft.web.BoardController.findByWriter(java.lang.String)
+2019-03-28 15:06:03.940 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-28 15:06:03.940 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-28 15:06:03.960 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 15:06:03.960 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 15:06:03.986 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 15:06:04.149 [main] INFO  o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2019-03-28 15:06:04.282 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-03-28 15:06:04.291 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:06:04.296 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:06:04.303 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-03-28 15:06:04.314 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2019-03-28 15:06:04.316 [main] INFO  com.estsoft.BoardApplication - Started BoardApplication in 2.776 seconds (JVM running for 3.236)
+2019-03-28 15:06:08.987 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-28 15:06:08.988 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-28 15:06:08.999 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+2019-03-28 15:09:33.697 [RMI TCP Connection(7)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2019-03-28 15:09:33.698 [RMI TCP Connection(7)-127.0.0.1] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 15:06:01 KST 2019]; root of context hierarchy
+2019-03-28 15:09:33.699 [RMI TCP Connection(7)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-03-28 15:09:33.699 [RMI TCP Connection(7)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-03-28 15:09:38.551 [main] INFO  com.estsoft.BoardApplication - Starting BoardApplication on DESKTOP-COAE010 with PID 11704 (C:\JSB\PilotProject\board\bin started by JSB in C:\JSB\PilotProject\board)
+2019-03-28 15:09:38.552 [main] INFO  com.estsoft.BoardApplication - No active profile set, falling back to default profiles: default
+2019-03-28 15:09:38.646 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2019-03-28 15:09:38.674 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 15:09:38 KST 2019]; root of context hierarchy
+2019-03-28 15:09:39.505 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 15:09:39.511 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-03-28 15:09:39.511 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2019-03-28 15:09:39.600 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-03-28 15:09:39.600 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 926 ms
+2019-03-28 15:09:39.685 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-28 15:09:39.687 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-28 15:09:39.688 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-28 15:09:39.688 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-28 15:09:39.688 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-28 15:09:39.899 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-03-28 15:09:39.907 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-28 15:09:39.947 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2019-03-28 15:09:39.948 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2019-03-28 15:09:39.949 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2019-03-28 15:09:39.974 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-03-28 15:09:40.043 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-28 15:09:40.284 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2019-03-28 15:09:40.324 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-28 15:09:40.647 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 15:09:38 KST 2019]; root of context hierarchy
+2019-03-28 15:09:40.683 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/board/test],methods=[GET]}" onto public java.lang.String com.estsoft.web.BoardController.test()
+2019-03-28 15:09:40.685 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/board/writer/{id}],methods=[GET]}" onto public java.util.List<com.estsoft.domain.Board> com.estsoft.web.BoardController.findByWriter(java.lang.String)
+2019-03-28 15:09:40.686 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-28 15:09:40.686 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-28 15:09:40.706 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 15:09:40.706 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 15:09:40.729 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 15:09:40.887 [main] INFO  o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2019-03-28 15:09:41.022 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-03-28 15:09:41.031 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:09:41.035 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:09:41.042 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-03-28 15:09:41.052 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2019-03-28 15:09:41.055 [main] INFO  com.estsoft.BoardApplication - Started BoardApplication in 2.729 seconds (JVM running for 3.188)
+2019-03-28 15:09:43.853 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-28 15:09:43.853 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-28 15:09:43.864 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+2019-03-28 15:30:41.509 [RMI TCP Connection(24)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2019-03-28 15:30:41.509 [RMI TCP Connection(24)-127.0.0.1] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 15:09:38 KST 2019]; root of context hierarchy
+2019-03-28 15:30:41.511 [RMI TCP Connection(24)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-03-28 15:30:41.511 [RMI TCP Connection(24)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-03-28 15:30:45.521 [main] INFO  com.estsoft.BoardApplication - Starting BoardApplication on DESKTOP-COAE010 with PID 7884 (C:\JSB\PilotProject\board\bin started by JSB in C:\JSB\PilotProject\board)
+2019-03-28 15:30:45.523 [main] INFO  com.estsoft.BoardApplication - No active profile set, falling back to default profiles: default
+2019-03-28 15:30:45.622 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2019-03-28 15:30:45.650 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 15:30:45 KST 2019]; root of context hierarchy
+2019-03-28 15:30:46.517 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 15:30:46.523 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-03-28 15:30:46.524 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2019-03-28 15:30:46.623 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-03-28 15:30:46.624 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 974 ms
+2019-03-28 15:30:46.709 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-28 15:30:46.711 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-28 15:30:46.712 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-28 15:30:46.712 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-28 15:30:46.712 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-28 15:30:46.924 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-03-28 15:30:46.932 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-28 15:30:46.973 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2019-03-28 15:30:46.974 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2019-03-28 15:30:46.974 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2019-03-28 15:30:47.001 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-03-28 15:30:47.071 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-28 15:30:47.324 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2019-03-28 15:30:47.366 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-28 15:30:47.705 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 15:30:45 KST 2019]; root of context hierarchy
+2019-03-28 15:30:47.745 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/board/test],methods=[GET]}" onto public java.lang.String com.estsoft.web.BoardController.test()
+2019-03-28 15:30:47.746 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/board/writer/{id}],methods=[GET]}" onto public java.util.List<com.estsoft.domain.Board> com.estsoft.web.BoardController.findByWriter(java.lang.String)
+2019-03-28 15:30:47.747 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-28 15:30:47.748 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-28 15:30:47.769 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 15:30:47.769 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 15:30:47.793 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 15:30:47.960 [main] INFO  o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2019-03-28 15:30:48.091 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-03-28 15:30:48.100 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:30:48.105 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:30:48.112 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-03-28 15:30:48.122 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2019-03-28 15:30:48.125 [main] INFO  com.estsoft.BoardApplication - Started BoardApplication in 2.83 seconds (JVM running for 3.294)
+2019-03-28 15:30:48.349 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-28 15:30:48.349 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-28 15:30:48.362 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
+2019-03-28 15:52:40.265 [RMI TCP Connection(23)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2019-03-28 15:52:40.266 [RMI TCP Connection(23)-127.0.0.1] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 15:30:45 KST 2019]; root of context hierarchy
+2019-03-28 15:52:40.267 [RMI TCP Connection(23)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-03-28 15:52:40.267 [RMI TCP Connection(23)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-03-28 15:52:45.075 [main] INFO  com.estsoft.BoardApplication - Starting BoardApplication on DESKTOP-COAE010 with PID 19188 (C:\JSB\PilotProject\board\bin started by JSB in C:\JSB\PilotProject\board)
+2019-03-28 15:52:45.077 [main] INFO  com.estsoft.BoardApplication - No active profile set, falling back to default profiles: default
+2019-03-28 15:52:45.173 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2019-03-28 15:52:45.196 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 15:52:45 KST 2019]; root of context hierarchy
+2019-03-28 15:52:46.079 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 15:52:46.084 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-03-28 15:52:46.085 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2019-03-28 15:52:46.180 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-03-28 15:52:46.181 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 985 ms
+2019-03-28 15:52:46.268 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-28 15:52:46.270 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-28 15:52:46.270 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-28 15:52:46.271 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-28 15:52:46.271 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-28 15:52:46.483 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-03-28 15:52:46.491 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-28 15:52:46.532 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2019-03-28 15:52:46.533 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2019-03-28 15:52:46.534 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2019-03-28 15:52:46.558 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-03-28 15:52:46.627 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-28 15:52:46.874 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2019-03-28 15:52:46.916 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-28 15:52:47.257 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 15:52:45 KST 2019]; root of context hierarchy
+2019-03-28 15:52:47.298 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/board/test],methods=[GET]}" onto public java.lang.String com.estsoft.web.BoardController.test()
+2019-03-28 15:52:47.299 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/board/writer/{id}],methods=[GET]}" onto public java.util.List<com.estsoft.domain.Board> com.estsoft.web.BoardController.findByWriter(java.lang.String)
+2019-03-28 15:52:47.301 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-28 15:52:47.301 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-28 15:52:47.322 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 15:52:47.322 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 15:52:47.346 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 15:52:47.514 [main] INFO  o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2019-03-28 15:52:47.646 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-03-28 15:52:47.654 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:52:47.660 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 15:52:47.667 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-03-28 15:52:47.678 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2019-03-28 15:52:47.680 [main] INFO  com.estsoft.BoardApplication - Started BoardApplication in 2.835 seconds (JVM running for 3.3)
+2019-03-28 15:52:53.058 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-28 15:52:53.058 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-28 15:52:53.070 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms
+2019-03-28 16:00:42.228 [RMI TCP Connection(11)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2019-03-28 16:00:42.228 [RMI TCP Connection(11)-127.0.0.1] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 15:52:45 KST 2019]; root of context hierarchy
+2019-03-28 16:00:42.229 [RMI TCP Connection(11)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-03-28 16:00:42.230 [RMI TCP Connection(11)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-03-28 16:00:47.879 [main] INFO  com.estsoft.BoardApplication - Starting BoardApplication on DESKTOP-COAE010 with PID 18236 (C:\JSB\PilotProject\board\bin started by JSB in C:\JSB\PilotProject\board)
+2019-03-28 16:00:47.881 [main] INFO  com.estsoft.BoardApplication - No active profile set, falling back to default profiles: default
+2019-03-28 16:00:47.976 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2019-03-28 16:00:48.001 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 16:00:48 KST 2019]; root of context hierarchy
+2019-03-28 16:00:48.890 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2019-03-28 16:00:48.896 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-03-28 16:00:48.896 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2019-03-28 16:00:48.995 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-03-28 16:00:48.996 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 995 ms
+2019-03-28 16:00:49.083 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-28 16:00:49.085 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-28 16:00:49.085 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-28 16:00:49.086 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-28 16:00:49.086 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-28 16:00:49.296 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-03-28 16:00:49.304 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-28 16:00:49.346 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2019-03-28 16:00:49.347 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2019-03-28 16:00:49.348 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2019-03-28 16:00:49.372 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-03-28 16:00:49.452 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-28 16:00:49.709 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2019-03-28 16:00:49.758 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-28 16:00:50.114 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 16:00:48 KST 2019]; root of context hierarchy
+2019-03-28 16:00:50.154 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/board/test],methods=[GET]}" onto public java.lang.String com.estsoft.web.BoardController.test()
+2019-03-28 16:00:50.155 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/board/writer/{id}],methods=[GET]}" onto public java.util.List<com.estsoft.domain.Board> com.estsoft.web.BoardController.findByWriter(java.lang.String)
+2019-03-28 16:00:50.156 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-28 16:00:50.157 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-28 16:00:50.178 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 16:00:50.178 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 16:00:50.203 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-28 16:00:50.368 [main] INFO  o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2019-03-28 16:00:50.497 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2019-03-28 16:00:50.506 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-03-28 16:00:50.512 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-03-28 16:00:50.518 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2019-03-28 16:00:50.529 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2019-03-28 16:00:50.531 [main] INFO  com.estsoft.BoardApplication - Started BoardApplication in 2.874 seconds (JVM running for 3.326)
+2019-03-28 16:00:53.921 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-28 16:00:53.922 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-28 16:00:53.934 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms
+2019-03-28 16:17:47.484 [RMI TCP Connection(20)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2019-03-28 16:17:47.484 [RMI TCP Connection(20)-127.0.0.1] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@460d0a57: startup date [Thu Mar 28 16:00:48 KST 2019]; root of context hierarchy
+2019-03-28 16:17:47.486 [RMI TCP Connection(20)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2019-03-28 16:17:47.486 [RMI TCP Connection(20)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
