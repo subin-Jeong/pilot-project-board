@@ -20,7 +20,6 @@
 
   <!-- Custom styles for this page -->
   <link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-  
 
 </head>
 
@@ -340,26 +339,37 @@
             <div class="card-body">
 				
               <div class="table-responsive">
+              
+              	<form name="form">
+              	
                 <table class="table table-bordered" width="100%" cellspacing="0">
                   <tbody>
-                  	<form name="form">
+                  	
                   	<tr class="form-group">
-                      <td>제목</td>
+                      <td width="20%">제목</td>
                       <td><input type="text" class="form-control" id="title" placeholder="제목을 입력하세요"></td>
                     </tr>
                     <tr class="form-group">
                       <td>내용</td>
                       <td><textarea class="form-control" id="contents" placeholder="내용을 입력하세요"></textarea></td>
                     </tr>
-                    </form>
+                    
           	      </tbody>
                 </table>
                 
+	            <div class="card mb-4 py-3 border-left-primary upload-container">
+	            <input multiple="multiple" type="file" name="files" class="btn btn-light btn-icon-split"/>
+	            </div>	
+	                        
+    			</form>
+	        	
 				<div style="float:right;">		
 				<a href="#" class="btn btn-primary btn-icon-split" id="btn-save">
 				<span class="text">글등록</span>
 				</a>
-				</div>
+				<a href="#" class="btn btn-secondary btn-icon-split" id="btn-exit">
+					<span class="text">취소</span>
+				</a>
 				
               </div>
 
@@ -436,7 +446,6 @@
   <!-- custom JavaScript -->
   <script src="../js/handlebars.js"></script>
   <script src="../js/board/script.js"></script>
-  
   
 </body>
 

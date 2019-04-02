@@ -1,10 +1,8 @@
 package com.estsoft.web;
 
-import java.util.Enumeration;
 import java.util.List;
 
 import javax.persistence.Column;
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,14 +21,14 @@ import com.estsoft.repository.BoardRepository;
 
 @Controller
 @RequestMapping("/board")
+@Transactional
 public class BoardController {
 
 	@Autowired
 	private BoardRepository boardRepository;
 	
-	//─────────────────────────────────────────
-	// 리스트
-	//─────────────────────────────────────────
+	// 리스트 조회
+	
 	@GetMapping("/list")
 	public String list() {
 		return "/board/list";
@@ -40,31 +38,31 @@ public class BoardController {
 	@ResponseBody 
 	public List<Board> getList() {
 	
-		return boardRepository.findAll(); 
+		return boardRepository.findAllOrdering(); 
 	}
 	
 	
-	//─────────────────────────────────────────
 	// 등록
-	//─────────────────────────────────────────
 	
 	@GetMapping("/write")
 	public String write() {
 		return "/board/write";
 	}
 	
-	@Transactional
 	@PostMapping("/save")
 	@ResponseBody 
 	public Board save(@RequestBody Board board) {
 		
-		return boardRepository.save(board);
+		Board saveBoard = boardRepository.save(board);
+		
+		// 생성된 bNo로 groupNo 설정
+		saveBoard.setGroupNo(saveBoard.getNo());
+		
+		return boardRepository.save(saveBoard);
 	}
 	
 	
-	//─────────────────────────────────────────
 	// 상세
-	//─────────────────────────────────────────
 	
 	@GetMapping("/detail/{bNo}")
 	public String detail(@PathVariable int bNo, Model model) {
@@ -80,9 +78,7 @@ public class BoardController {
 		return boardRepository.findOne(bNo);
 	}
 	
-	//─────────────────────────────────────────
 	// 수정
-	//─────────────────────────────────────────
 	
 	@GetMapping("/modify/{bNo}")
 	public String modify(@PathVariable int bNo, Model model) {
@@ -96,46 +92,86 @@ public class BoardController {
 	@ResponseBody
 	public Board update(@PathVariable int bNo, @RequestBody Board board) {
 		
+		Board updateBoard = boardRepository.findOne(bNo);
 		board.setNo(bNo);
+		
+		// 수정 시 기존 사항 반영
+		board.setGroupNo(updateBoard.getGroupNo());
+		board.setGroupSeq(updateBoard.getGroupSeq());
 		
 		return boardRepository.save(board);
 	}
 	
-	//─────────────────────────────────────────
 	// 삭제
-	//─────────────────────────────────────────
 	
 	@PutMapping("/delete/{bNo}")
 	@ResponseBody
 	public String delete(@PathVariable int bNo) {
-		boardRepository.delete(bNo);
+		
+		// 기존 데이터는 유지하되, delFlag = 'Y' 업데이트
+		Board board = boardRepository.findOne(bNo);
+		
+		board.setDelFlag("Y");
+		boardRepository.save(board);
+		
 		return "/board/list";
 	}	
 	
-	//─────────────────────────────────────────
 	// 답글 등록
-	//─────────────────────────────────────────
 	
 	@GetMapping("/write/{bNo}")
 	public String writeReply(@PathVariable int bNo, Model model) {
-		model.addAttribute("groupNo", bNo);
+		
+		// 답글의 답글인 경우
+		// groupNo가 있는지 확인
+		// groupNo = 0 : 원글
+		int groupNo = boardRepository.findGroupNoBybNo(bNo);
+		
+		// 원글의 답글인 경우
+		if(groupNo == 0) {
+			groupNo = bNo;
+		}
+		
+		model.addAttribute("groupNo", groupNo);
+		model.addAttribute("parentNo", bNo);
+		
 		return "/board/reply";
 	}
 	
-	@Transactional
 	@PostMapping("/saveReply")
 	@ResponseBody 
 	public Board saveReply(@RequestBody Board board) {
 		
 		// 원글 번호로 groupSeq, parentNo, depth 지정
 		int groupNo = board.getGroupNo();
+		int parentNo = board.getParentNo();
+		
+		// 원글의 답글인 경우
+		if(parentNo == 0) {
+			parentNo = groupNo;
+		}
 		
 		// groupSeq : 원글 포함 전체 순서 지정
 		// parentNo : 부모 글
-		// depth : parentNo의 depth + 1
-		int groupSeq = boardRepository.findMaxGroupSeqByGroupNo(groupNo);
+		// depth : 원글로부터 몇번째 계층인지
+		int depth = boardRepository.findDepthByParentNo(parentNo);
+		int groupSeq = boardRepository.findMinGroupSeqByParentNoAndGroupNo(parentNo, groupNo);
 		
-		board.setGroupSeq(groupSeq + 1);
+		if(groupSeq > 0) {
+			
+			// 기존 groupSeq 를 뒤로 밀기
+			boardRepository.updateGroupSeq(groupNo, groupSeq);
+						
+			board.setGroupSeq(groupSeq);
+			
+		} else {
+			
+			groupSeq = boardRepository.findMaxGroupSeqByGroupNo(groupNo);			
+			board.setGroupSeq(groupSeq + 1);
+		
+		}
+		
+		board.setDepth(depth + 1);
 		
 		return boardRepository.save(board);
 	}

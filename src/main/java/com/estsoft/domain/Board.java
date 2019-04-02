@@ -22,7 +22,7 @@ public class Board {
     @Column(name = "CONTENT")
     private String content;
     
-    @Column(name = "WRITER")
+    @Column(name = "WRITER", updatable = false)
     private String writer;
 
     @Column(name = "REG_DATE")
@@ -41,10 +41,10 @@ public class Board {
 	@Column(name = "GROUP_SEQ")
     private int groupSeq;
 	
-	@Column(name = "PARENT_NO")
+	@Column(name = "PARENT_NO", insertable = true, updatable = false)
     private int parentNo;
 	
-	@Column(name = "DEPTH")
+	@Column(name = "DEPTH", insertable = true, updatable = false)
     private int depth;
 
 	public int getNo() {
