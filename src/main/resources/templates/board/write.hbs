@@ -357,10 +357,27 @@
           	      </tbody>
                 </table>
                 
-	            <div class="card mb-4 py-3 border-left-primary upload-container">
-	            <input multiple="multiple" type="file" name="files" class="btn btn-light btn-icon-split"/>
-	            </div>	
-	                        
+	            <!-- 이미지 -->          
+
+			    
+			    
+			    <div class="card mb-4">
+					<div class="card-header">
+	                <textarea class="demo demo-textarea card-header" 
+			      			style="color:#858796; width:100%; height:30px; padding:5px; border: 0; overflow-y:hidden; resize:none; text-align:center; line-height:30px; " disabled>
+			      	
+			      	Ctrl + V Here
+			      	
+			      	</textarea>
+	                </div>
+	                <div class="card-body" style="height:auto; padding:10px; " id="pasteImages">
+	                </div>
+              	</div>
+			    
+			    
+			    
+			    <!-- 이미지 -->
+			    
     			</form>
 	        	
 				<div style="float:right;">		
@@ -446,6 +463,7 @@
   <!-- custom JavaScript -->
   <script src="../js/handlebars.js"></script>
   <script src="../js/board/script.js"></script>
+  <script src="../js/board/paste.js"></script>
   
 </body>
 

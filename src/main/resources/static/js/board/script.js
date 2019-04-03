@@ -182,68 +182,35 @@ $(document).ready(function() {
 	});
 	
 	// 파일 업로드
-	var dropzone = new Dropzone('#demo-upload', {
-		  previewTemplate: document.querySelector('#preview-template').innerHTML,
-		  parallelUploads: 2,
-		  thumbnailHeight: 120,
-		  thumbnailWidth: 120,
-		  maxFilesize: 3,
-		  filesizeBase: 1000,
-		  thumbnail: function(file, dataUrl) {
-		    if (file.previewElement) {
-		      file.previewElement.classList.remove("dz-file-preview");
-		      var images = file.previewElement.querySelectorAll("[data-dz-thumbnail]");
-		      for (var i = 0; i < images.length; i++) {
-		        var thumbnailElement = images[i];
-		        thumbnailElement.alt = file.name;
-		        thumbnailElement.src = dataUrl;
-		      }
-		      setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
-		    }
-		  }
-
-		});
-
-
-		// Now fake the file upload, since GitHub does not handle file uploads
-		// and returns a 404
-
-		var minSteps = 6,
-		    maxSteps = 60,
-		    timeBetweenSteps = 100,
-		    bytesPerStep = 100000;
-
-		dropzone.uploadFiles = function(files) {
-		  var self = this;
-
-		  for (var i = 0; i < files.length; i++) {
-
-		    var file = files[i];
-		    totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
-
-		    for (var step = 0; step < totalSteps; step++) {
-		      var duration = timeBetweenSteps * (step + 1);
-		      setTimeout(function(file, totalSteps, step) {
-		        return function() {
-		          file.upload = {
-		            progress: 100 * (step + 1) / totalSteps,
-		            total: file.size,
-		            bytesSent: (step + 1) * file.size / totalSteps
-		          };
-
-		          self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
-		          if (file.upload.progress == 100) {
-		            file.status = Dropzone.SUCCESS;
-		            self.emit("success", file, 'success', null);
-		            self.emit("complete", file);
-		            self.processQueue();
-		            //document.getElementsByClassName("dz-success-mark").style.opacity = "1";
-		          }
-		        };
-		      }(file, totalSteps, step), duration);
-		    }
-		  }
-		}
+	$(function(){
+		
+	      $('.demo-noninputable').pastableNonInputable();
+	      $('.demo-textarea').on('focus', function(){
+	        var isFocused = $(this).hasClass('pastable-focus');
+	        console && console.log('[textarea] focus event fired! ' + (isFocused ? 'fake onfocus' : 'real onfocus'));
+	      }).pastableTextarea().on('blur', function(){
+	        var isFocused = $(this).hasClass('pastable-focus');
+	        console && console.log('[textarea] blur event fired! ' + (isFocused ? 'fake onblur' : 'real onblur'));
+	      });
+	      $('.demo-contenteditable').pastableContenteditable();
+	      $('.demo').on('pasteImage', function(ev, data){
+	        var blobUrl = URL.createObjectURL(data.blob);
+	        
+	        // 붙여넣기한 데이터
+	        var pasteImageData ="<div class=\"result\"><img src=\"" + data.dataURL +"\" ></div>";
+	        
+	        $('#pasteImages').append(pasteImageData);
+	        
+	      }).on('pasteImageError', function(ev, data){
+	        alert('Oops: ' + data.message);
+	        if(data.url){
+	          alert('But we got its url anyway:' + data.url)
+	        }
+	      }).on('pasteText', function(ev, data){
+	        $('<div class="result"></div>').text('text: "' + data.text + '"').insertAfter(this);
+	      });
+	    });
+	
 	
 });
 
