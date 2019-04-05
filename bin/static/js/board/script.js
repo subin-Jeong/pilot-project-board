@@ -504,7 +504,7 @@ $(document).ready(function() {
 
 // 답글의 댓글 번호 설정
 function setReplyNo(n) {
-	$("#reply_no").val(n);
+	$("#reply_no").val(n); 
 }
 
 // 댓글 수정 버튼 생성
