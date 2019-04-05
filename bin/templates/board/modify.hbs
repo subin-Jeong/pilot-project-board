@@ -364,11 +364,11 @@
                     </tr>
                     <tr class="form-group">
                       <td>수정일자</td>
-                      <td><input type="text" class="form-control" id="modify_date" placeholder="제목을 입력하세요" value="{{board.modifyDate}}"></td>
+                      <td><input type="text" class="form-control" id="modify_date" placeholder="제목을 입력하세요" value="{{dateFormat board.modifyDate format="YYYY-MM-dd"}}"></td>
                     </tr>
                     <tr class="form-group">
                       <td>등록일자</td>
-                      <td><input type="text" class="form-control" id="reg_date" placeholder="제목을 입력하세요" value="{{board.regDate}}"></td>
+                      <td><input type="text" class="form-control" id="reg_date" placeholder="제목을 입력하세요" value="{{dateFormat board.regDate format="YYYY-MM-dd"}}"></td>
                     </tr>
                     <tr class="form-group">
                       <td>삭제유무</td>

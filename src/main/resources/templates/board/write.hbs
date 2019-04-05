@@ -351,16 +351,21 @@
                     </tr>
                     <tr class="form-group">
                       <td>내용</td>
-                      <td><textarea class="form-control" id="contents" placeholder="내용을 입력하세요"></textarea></td>
+                      <td>
+                      	<textarea class="form-control" id="contents" placeholder="내용을 입력하세요"></textarea>
+                      </td>
                     </tr>
                     
           	      </tbody>
                 </table>
                 
 	            <!-- 이미지 -->          
-
+				<div contentEditable="true" id="uploadFiles"
+					style="border:1px solid #e3e6f0; background-color:#F8F9FC; border-radius:5px; width:100%; height:auto; padding:10px;">
+              	첨부파일 붙여넣기 또는 파일 드롭
+				</div>
 			    
-			    
+			    <br><br>
 			    <div class="card mb-4">
 					<div class="card-header">
 	                <textarea class="demo demo-textarea card-header" 
@@ -370,7 +375,7 @@
 			      	
 			      	</textarea>
 	                </div>
-	                <div class="card-body" style="height:auto; padding:10px; " id="pasteImages">
+	                <div class="card-body" style="height:auto; padding:10px;" id="pasteImages">
 	                </div>
               	</div>
 			    
@@ -463,6 +468,7 @@
   <!-- custom JavaScript -->
   <script src="../js/handlebars.js"></script>
   <script src="../js/board/script.js"></script>
+  <script src="../js/board/script-upload.js"></script>
   <script src="../js/board/paste.js"></script>
   
 </body>

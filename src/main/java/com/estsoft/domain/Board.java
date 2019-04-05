@@ -1,6 +1,7 @@
 package com.estsoft.domain;
 
-import java.sql.Date;
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,7 +40,7 @@ public class Board {
     private int groupNo;
 	
 	@Column(name = "GROUP_SEQ")
-    private int groupSeq;
+    private double groupSeq;
 	
 	@Column(name = "PARENT_NO", insertable = true, updatable = false)
     private int parentNo;
@@ -111,11 +112,11 @@ public class Board {
 		this.groupNo = groupNo;
 	}
 
-	public int getGroupSeq() {
+	public double getGroupSeq() {
 		return groupSeq;
 	}
 
-	public void setGroupSeq(int groupSeq) {
+	public void setGroupSeq(double groupSeq) {
 		this.groupSeq = groupSeq;
 	}
 
@@ -142,5 +143,6 @@ public class Board {
 				+ ", groupSeq=" + groupSeq + ", parentNo=" + parentNo + ", depth=" + depth + "]";
 	}
 
+	
 	
 }

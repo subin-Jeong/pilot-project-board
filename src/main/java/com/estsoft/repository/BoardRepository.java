@@ -21,11 +21,15 @@ public interface BoardRepository extends JpaRepository<Board, Integer> {
 	
 	// findMaxGroupSeqByGroupNo
 	@Query("SELECT COALESCE(MAX(groupSeq), 0) FROM BOARD b WHERE " + delCheck + " AND b.groupNo = :groupNo")
-	int findMaxGroupSeqByGroupNo(@Param("groupNo") int groupNo);
+	double findMaxGroupSeqByGroupNo(@Param("groupNo") int groupNo);
 	
 	// findDepthByParentNo
 	@Query("SELECT COALESCE(depth, 0) FROM BOARD b WHERE " + delCheck + " AND b.no = :parentNo")
 	int findDepthByParentNo(@Param("parentNo") int parentNo);
+	
+	// findGroupSeqByGroupNoAndGroupSeq
+	@Query("SELECT COALESCE(MAX(groupSeq), 0) FROM BOARD b WHERE " + delCheck + " AND b.groupNo = :groupNo AND b.groupSeq < :groupSeq")
+	double findGroupSeqByGroupNoAndGroupSeq(@Param("groupNo") int groupNo, @Param("groupSeq") double groupSeq);
 	
 	// findAllOrdering
 	@Query("SELECT b FROM BOARD b WHERE " + delCheck + " ORDER BY b.groupNo DESC, b.groupSeq ASC, b.depth ASC")
@@ -38,13 +42,13 @@ public interface BoardRepository extends JpaRepository<Board, Integer> {
 		  	+ "AND	b.groupNo = :groupNo "
 		  	+ "AND	b.groupSeq > (SELECT groupSeq FROM BOARD WHERE " + delCheck + " AND no = :parentNo) "
 		  	+ "AND	b.depth <= (SELECT depth FROM BOARD WHERE " + delCheck + " AND no = :parentNo) ")
-	int findMinGroupSeqByParentNoAndGroupNo(@Param("parentNo") int parentNo, @Param("groupNo") int groupNo);
+	double findMinGroupSeqByParentNoAndGroupNo(@Param("parentNo") int parentNo, @Param("groupNo") int groupNo);
 	
 	// updateGroupSeq
 	@Modifying
 	@Transactional
 	@Query("UPDATE BOARD b SET b.groupSeq = b.groupSeq + 1 WHERE " + delCheck + " AND b.groupNo = :groupNo AND b.groupSeq >= :groupSeq")
-	int updateGroupSeq(@Param("groupNo") int groupNo, @Param("groupSeq") int groupSeq);
+	int updateGroupSeq(@Param("groupNo") int groupNo, @Param("groupSeq") double groupSeq);
 	
 	
 } 
