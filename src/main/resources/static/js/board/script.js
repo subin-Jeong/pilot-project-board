@@ -514,7 +514,7 @@ function setUpdateBtn() {
 }
 
 // 댓글 삭제
-function deleteReply(rNo) { 
+function deleteReply(rNo) {
 	
 	$.ajax({
         type: "PUT",
