@@ -521,7 +521,7 @@ function deleteReply(rNo) {
         url: "/reply/delete/" + rNo,
         success:function(args){   
         	
-        	alert("삭제되었습니다.")  
+        	alert("삭제되었습니다.");
         	
         }, 
         error:function(e){  
